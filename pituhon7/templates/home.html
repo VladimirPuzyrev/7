@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% extends 'base.html' %}
+  {% block content %
+  {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% urk 'logout' %}">Logout</a></p>
+  {% else %}
+    <a href="{% urk 'login' %}">Login</a>
+    <a href="{% urk 'signup' %}">signup</a>
+  {% endif %}
+  {% endblock %}
+</body>
+</html>
